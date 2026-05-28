@@ -1,0 +1,27 @@
+services:
+  postgres-accounts:
+    image: postgres:16-alpine
+    container_name: accounts-db
+    environment:
+      - POSTGRES_DB=neowallet_accounts
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_accounts_data:/var/lib/postgresql/data
+    networks:
+      - neowallet-network
+    # El Healthcheck le dice a Docker (y a otros servicios) cuándo Postgres acepta conexiones
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d neowallet_accounts"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+networks:
+  neowallet-network:
+    driver: bridge
+
+volumes:
+  postgres_accounts_data:

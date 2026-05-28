@@ -1,0 +1,26 @@
+server:
+  port: 8081 # Cada microservicio debe tener un puerto distinto
+
+spring:
+  application:
+    name: account-service
+
+  datasource:
+    # Estos datos deben coincidir exactamente con tu docker-compose.yml
+    url: jdbc:postgresql://localhost:5432/neowallet_accounts
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      # 'none' porque dejaremos que Flyway se encargue de la estructura (Práctica Senior)
+      ddl-auto: validate
+    show-sql: true # Útil para ver en consola qué está haciendo Hibernate
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
