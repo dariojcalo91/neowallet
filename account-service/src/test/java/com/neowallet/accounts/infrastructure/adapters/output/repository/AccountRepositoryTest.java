@@ -3,15 +3,13 @@ package com.neowallet.accounts.infrastructure.adapters.output.repository;
 import com.neowallet.accounts.infrastructure.adapters.output.entities.AccountEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.context.SpringBootTest;
 import java.math.BigDecimal;
 import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // Usa nuestra DB real de Docker
-class AccountRepositoryTest {
+@SpringBootTest // 🚀 LE ORDENA A SPRING LEVANTARSE E INYECTAR LOS BEANS
+class AccountRepositoryTest extends BaseIntegrationTest{
 
     @Autowired
     private SpringDataAccountRepository repository;
