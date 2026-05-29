@@ -4,6 +4,8 @@
 [![Spring Boot 3.2](https://img.shields.io/badge/Spring_Boot-3.2-brightgreen?logo=springboot)](https://spring.io/projects/spring-boot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![CI Pipeline](https://github.com/TU_USUARIO_DE_GITHUB/TU_NOMBRE_DEL_REPOSITORIO/actions/workflows/ci.yml/badge. Cartwright)
+
 Sistema de billetera digital distribuida diseñado bajo principios de **Domain-Driven Design (DDD)**, **Arquitectura Hexagonal** y **TDD**.
 
 ## 🏗️ Arquitectura
